@@ -1,7 +1,7 @@
 const quizSelector = document.getElementById("quiz-selector");
 const quizContainer = document.getElementById("quiz-container");
 const resultsContainer = document.getElementById("results-container");
-const questionContainer = document.getElementById("question");
+const questionContainer = document.getElementById("question-container");
 const answerButtonsContainer = document.getElementById(
   "answer-buttons-container"
 );
@@ -67,8 +67,9 @@ class Quiz {
 
 const loadQuiz = (questions) => {
   const quiz = new Quiz(questions);
+  quiz.displayQuestion();
   quizContainer.style.display = "block";
-  quizSelector.style.display = "flex";
+  quizSelector.style.display = "none";
 };
 
 const loadAllQuiz = async () => {
